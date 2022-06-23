@@ -1,0 +1,339 @@
+
+:root {
+    --primary-color: #ea4c89;
+    --hover-color: #f082ac;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* responsive */
+
+.grid__main {
+    max-width: 100%;
+    margin:  0 74px;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -18px;
+    margin-right: -18px;
+}
+
+.grid-extra {
+    width: 1200px;
+    max-width: 100%;
+    margin:  0 auto;
+}
+
+.grid__column-12-5 {
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 20%;
+}
+
+.grid__column-12-4 {
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 25%;
+}
+
+.grid__column-2-4 {
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 20%;
+}
+
+.grid__column-9-6 {
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 80%;
+}
+
+/* animation */
+
+@keyframes growth {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes transform {
+    from {
+        transform: rotate(0) ;
+        left: 0;
+    }
+    to {
+        transform: rotate(360deg);
+        left: calc(100% - 24px);
+    }
+}
+
+/* Modal */
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-register {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+}
+
+.modal-register-header {
+    width: 100%;
+    padding: 32px 30px 0 30px;
+    display: flex;
+    background-color: #f3d3c8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+.close-form-register {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: transparent;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.modal-register-header-info {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-register-header-info-logo {
+   margin: 40px 0 20px 0;
+}
+
+.modal-register-header-info-introduce {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--text-color);
+}
+
+.modal-register-header-info-designer {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 40px;
+}
+
+.modal-register-header-banner {
+    flex: 1;
+}
+
+.modal-register-header-banner-img {
+    width: 100%;
+    padding-top: 62px;
+}
+
+.modal-register-content {
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-register-content-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.modal-register-content-app-google {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #4285f4;
+    padding: 0 16px;
+}
+
+.modal-register-content-app-google-svg {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+}
+
+
+.modal-register-content-app-google-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white-color);
+    margin: 0 auto;
+}
+
+.modal-register-content-app-twitter {
+    text-decoration: none;
+    margin-left: 20px;
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #e7e7e9;
+    position: relative;
+}
+
+.modal-register-content-app-twitter-sign {
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: -50px;
+    width: 150px;
+    height: 38px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white-color);
+    white-space: nowrap;
+    display: none;
+}
+
+.modal-register-content-app-twitter-sign::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-style: solid;
+    border-width: 6px 6px;
+    border-color: var(--text-color) transparent transparent transparent;
+}
+
+.modal-register-content-app-twitter:hover .modal-register-content-app-twitter-sign {
+    display: flex;
+}
+
+.modal-register-content-app-twitter:hover {
+    background-color: #1da1f2;
+}
+
+.modal-register-content-app-twitter:hover .modal-register-content-app-twitter-icon {
+    color: var(--white-color);
+}
+
+.modal-register-content-app-twitter-icon {
+    color: #6e6d7a;
+    font-size: 1.4rem;
+}
+
+.modal-register-content-email {
+    margin-top: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.modal-register-content-email:hover {
+    color: #7263d4;
+}
+
+.modal-register-footer {
+    margin-top: 0;
+    padding: 32px 30px;
+    border-top: solid 1px #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: text;
+    position: relative;
+}
+
+.modal-register-footer-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.modal-register-footer-signup {
+    margin-left: 4px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.modal-register-footer-logo-dribbble {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: transform 2s linear infinite; 
+}
